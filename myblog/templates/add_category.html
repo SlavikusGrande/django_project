@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Create a new blog category!{% endblock %}
+ {% block content %}
+
+{% if user.is_authenticated %}
+<h1>Add category</h1>
+<br><br/>
+<div class="mb-3 row">
+    <form method = 'Post'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-secondary">Add Category</button>
+    </form>
+</div>
+{% else %}
+You are not registered!!!
+{% endif %}
+  {% endblock %}
